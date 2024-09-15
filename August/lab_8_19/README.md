@@ -8,5 +8,5 @@ Function 1 – reverses the array
 Function 2 – count the number of odd/even elements in the array
 Function 3 - Check the number of zeros in the array
 6. Write a Go program using the concept of Go routines. Two Functions Get_Name() and Get_rollno() get the details from the user.  The third function print_data( ) waits for the results from the  Get_Name() and Get_rollno() and print the results.
-7. Create a struct rect in Go with the following fields { int x, int y , float area, float perimeter. Write functions and methods in go to calculate the area and perimeter of the rect.
-Use variable names with your rollno/names as suffix / prefix
+7. Create a struct rect in Go with the following fields { int x, int y , float area, float
+perimeter. Write functions and methods in go to calculate the area and perimeter of the rect.
