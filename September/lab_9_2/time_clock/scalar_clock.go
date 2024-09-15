@@ -1,4 +1,4 @@
-package timeclock
+package time_clock
 
 import (
 	"fmt"

@@ -85,8 +85,6 @@ func main() {
 						fmt.Scan(&arr[i])
 					}
 
-					
-
 					odd, even := questions.Find_odd_even(arr)
 					fmt.Printf("Number of odd numbers: %d\n", odd)
 					fmt.Printf("Number of even numbers: %d\n", even)
@@ -94,40 +92,6 @@ func main() {
 					}
 				case 5:{
 					var n int
-					fmt.Print("Enter the size of the array: ")
-					fmt.Scan(&n)
-
-					arr := make([]int, n)
-					fmt.Println("Enter the elements of the array:")
-					for i := 0; i < n; i++ {
-						fmt.Scan(&arr[i])
-					}
-
-					var wg sync.WaitGroup
-					wg.Add(3)
-
-					go func() {
-						sum := findSum(arr)
-						fmt.Println("Sum of the array:", sum)
-						wg.Done()
-					}()
-
-					go func() {
-						average := findAverage(arr)
-						fmt.Println("Average of the array:", average)
-						wg.Done()
-					}()
-
-					go func() {
-						max := findMax(arr)
-						fmt.Println("Maximum element in the array:", max)
-						wg.Done()
-					}()
-
-					wg.Wait()
-				}
-					case 6:{
-						var n int
 						fmt.Print("Enter the size of the array: ")
 						fmt.Scan(&n)
 
@@ -141,13 +105,13 @@ func main() {
 						wg.Add(3)
 
 						go func() {
-							reverseArray(arr)
+							questions.ReverseArray(arr)
 							fmt.Println("Reversed array:", arr)
 							wg.Done()
 						}()
 
 						go func() {
-							odd, even := countOddEven(arr)
+							odd, even := questions.CountOddEven(arr)
 							fmt.Printf("Number of odd numbers: %d\n", odd)
 							fmt.Printf("Number of even numbers: %d\n", even)
 							wg.Done()
@@ -160,9 +124,10 @@ func main() {
 						}()
 
 						wg.Wait()
-					}
-				case 7:{
-					var wg sync.WaitGroup
+				}
+					case 6:{
+
+						var wg sync.WaitGroup
 				wg.Add(2)
 				
 				{
@@ -181,6 +146,19 @@ func main() {
 
 				wg.Wait()
 				}
+						
+					}
+				case 7:{
+					var r rect
+					r.x = 5
+					r.y = 10
+				
+					calculateArea(&r)
+					calculatePerimeter(&r)
+				
+					fmt.Printf("Area: %.2f\n", r.area)
+					fmt.Printf("Perimeter: %.2f\n", r.perimeter)
+					
 			}
 
 			}
