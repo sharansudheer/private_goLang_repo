@@ -118,7 +118,7 @@ func main() {
 						}()
 
 						go func() {
-							zeros := countZeros(arr)
+							zeros := questions.CountZeros(arr)
 							fmt.Printf("Number of zeros: %d\n", zeros)
 							wg.Done()
 						}()
@@ -133,15 +133,15 @@ func main() {
 				{
 
 				go func() {
-					name := Get_Name()
+					name := questions.Get_Name()
 					wg.Done()
-					print_data(name, Get_rollno())
+					questions.Print_data(name, questions.Get_rollno())
 				}()
 
 				go func() {
-					rollno := Get_rollno()
+					rollno := questions.Get_rollno()
 					wg.Done()
-					print_data(Get_Name(), rollno)
+					questions.Print_data(questions.Get_Name(), rollno)
 				}()
 
 				wg.Wait()
@@ -149,15 +149,15 @@ func main() {
 						
 					}
 				case 7:{
-					var r rect
-					r.x = 5
-					r.y = 10
+					var r questions.Rect
+					r.X = 5
+					r.Y = 10
 				
-					calculateArea(&r)
-					calculatePerimeter(&r)
+					questions.CalculateArea(&r)
+					questions.CalculatePerimeter(&r)
 				
-					fmt.Printf("Area: %.2f\n", r.area)
-					fmt.Printf("Perimeter: %.2f\n", r.perimeter)
+					fmt.Printf("Area: %.2f\n", r.Area)
+					fmt.Printf("Perimeter: %.2f\n", r.Perimeter)
 					
 			}
 
